@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Builder & Job Matcher</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf_viewer.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Resume Analyzer</h1>
+            <p>Upload your resume and job description to find skill matches</p>
+        </div>
+
+        <div class="input-section">
+            <div class="file-upload">
+                <label for="resumeFile" class="file-label">Choose Resume File</label>
+                <input type="file" id="resumeFile" accept=".txt,.pdf,.doc,.docx" />
+                <div id="selectedFileName"></div>
+            </div>
+
+            <div class="job-description">
+                <textarea id="jobDescription" placeholder="Paste job description here..."></textarea>
+            </div>
+
+            <button id="analyzeBtn" class="button">Analyze Match</button>
+        </div>
+
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <div class="match-score">
+                <h3>Match Score: <span id="matchPercentage">0</span>%</h3>
+            </div>
+
+            <div class="missing-skills">
+                <h3>Missing Skills</h3>
+                <ul id="missingSkillsList"></ul>
+            </div>
+
+            <div class="learning-resources">
+                <h3>Learning Resources</h3>
+                <div id="resourcesList"></div>
+            </div>
+
+            <div class="interview-simulator">
+                <h3>Interview Practice</h3>
+                <button id="startInterviewBtn" class="button">Start Interview Practice</button>
+                <div id="interviewContainer" style="display: none;">
+                    <div id="interviewQuestion"></div>
+                    <textarea id="userAnswer" placeholder="Type your answer here..."></textarea>
+                    <div class="interview-buttons">
+                        <button id="submitAnswerBtn" class="button">Submit Answer</button>
+                        <button id="nextQuestionBtn" class="button" style="display: none;">Next Question</button>
+                    </div>
+                    <div id="feedbackContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
